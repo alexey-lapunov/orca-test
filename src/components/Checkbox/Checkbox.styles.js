@@ -2,13 +2,6 @@ import { COLORS } from "styles/variables";
 
 import styled from "styled-components";
 
-export const Label = styled.label`
-  display: inline-flex;
-  align-items: center;
-
-  cursor: pointer;
-`;
-
 export const Box = styled.div`
   display: flex;
   justify-content: center;
@@ -20,6 +13,8 @@ export const Box = styled.div`
   background: ${COLORS.paleGrey};
   border: 1px solid ${COLORS.gray};
   border-radius: 2px;
+
+  transition: border 0.25s;
 
   svg {
     fill: ${COLORS.text};
@@ -50,4 +45,17 @@ export const Text = styled.p`
   color: ${COLORS.text};
 
   margin: 0 0 0 8px;
+`;
+
+export const Label = styled.label`
+  display: inline-flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover {
+    ${Box} {
+      border: 1px solid #0080ff;
+    }
+  }
 `;

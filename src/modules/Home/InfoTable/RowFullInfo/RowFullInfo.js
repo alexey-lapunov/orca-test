@@ -41,6 +41,8 @@ const RowFullInfo = ({
 
   const toggleOpenFullInfo = () => setOpenFullInfo(!isOpenFullInfo);
 
+  const onClickCopyBox = (e) => e.stopPropagation();
+
   return (
     <>
       <TableRow
@@ -62,10 +64,18 @@ const RowFullInfo = ({
           />
         </TableCell>
         <TableCell>
-          <CopyBox value={ipV4} whiteMode={isFocusRow} />
+          <CopyBox
+            value={ipV4}
+            whiteMode={isFocusRow}
+            onClick={onClickCopyBox}
+          />
         </TableCell>
         <TableCell>
-          <CopyBox value={ipV6} whiteMode={isFocusRow} />
+          <CopyBox
+            value={ipV6}
+            whiteMode={isFocusRow}
+            onClick={onClickCopyBox}
+          />
         </TableCell>
         <TableCell>
           <CustomLinkBox href={link} whiteMode={isFocusRow} />

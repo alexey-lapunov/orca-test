@@ -47,7 +47,9 @@ export const CustomRow = styled(TableRow)`
 `;
 
 export const CustomFillButton = styled(FillButton)`
-  padding: 6px 8px;
+  &&& {
+    padding: 6px 8px;
+  }
 `;
 
 export const CustomText = styled(Text)`

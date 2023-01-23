@@ -12,8 +12,10 @@ export const Container = styled.p`
   transition: color 0.25s;
 
   span {
-    color: ${({ whiteMode }) => (whiteMode ? COLORS.white : COLORS.gray)};
+    &:last-of-type {
+      color: ${({ whiteMode }) => (whiteMode ? COLORS.white : COLORS.gray)};
 
-    transition: color 0.25s;
+      transition: color 0.25s;
+    }
   }
 `;

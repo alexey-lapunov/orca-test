@@ -9,7 +9,7 @@ export const CopyValue = styled.p`
 
   color: ${COLORS.text};
 
-  widht: 100%;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 `;

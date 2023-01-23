@@ -5,7 +5,7 @@ import { Container } from "./Text.styles";
 
 const Text = ({ value, spanValue, whiteMode, className }) => (
   <Container whiteMode={whiteMode} className={className}>
-    {value} {spanValue && <span>{spanValue}</span>}
+    <span>{value}</span> <span>{spanValue}</span>
   </Container>
 );
 

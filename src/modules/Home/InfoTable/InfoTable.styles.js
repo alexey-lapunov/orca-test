@@ -1,6 +1,7 @@
 import RiskLevel from "components/RiskLevel/RiskLevel";
 
 import CopyBox from "components/CopyBox/CopyBox";
+import { FillButton } from "components/buttons/buttons";
 
 import styled from "styled-components";
 
@@ -45,6 +46,12 @@ export const ListCard = styled.ul`
   padding: 0;
 
   list-style: none;
+`;
+
+export const CustomFillButton = styled(FillButton)`
+  &&& {
+    padding: 6px 8px;
+  }
 `;
 
 export const ListCardItem = styled.li`

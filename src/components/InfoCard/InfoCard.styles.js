@@ -24,24 +24,33 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  width: 50%;
+  &:nth-child(2n + 1) {
+    width: 35%;
+  }
+
+  &:nth-child(2n) {
+    width: 65%;
+
+    padding: 4px 0 4px 32px;
+  }
 
   padding: 4px 0;
 `;
 
 export const Property = styled.div`
-  display: flex;
+  display: inline-flex;
+  width: 100%;
 `;
 
 export const PropertyLabel = styled(Text)`
-  width: 40%;
+  width: 38%;
   padding: 3px 0 0 0;
 
   color: ${COLORS.prediction};
 `;
 
 export const PropertyValue = styled.div`
-  width: 60%;
+  width: 62%;
 `;
 
 export const CustomFillButton = styled(FillButton)`

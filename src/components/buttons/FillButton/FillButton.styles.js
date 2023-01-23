@@ -26,6 +26,8 @@ export const Button = styled.button`
   transition: opacity 0.25s, border-color 0.25s;
 
   ${BtnText} {
+    font-family: "Mulish";
+
     color: ${({ lightMode }) => (lightMode ? COLORS.text : COLORS.white)};
   }
 

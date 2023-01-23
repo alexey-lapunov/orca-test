@@ -5,8 +5,12 @@ import { Container, CopyValue, Button } from "./CopyBox.styles";
 
 import { ReactComponent as SVGCopy } from "icons/copy.svg";
 
-const CopyBox = ({ value, whiteMode, className }) => {
-  const onClickButton = () => {
+const CopyBox = ({ value, whiteMode, className, onClick }) => {
+  const onClickButton = (e) => {
+    if (onClick) {
+      onClick(e);
+    }
+
     navigator.clipboard.writeText(value);
   };
 

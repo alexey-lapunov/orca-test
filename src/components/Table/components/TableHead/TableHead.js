@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styled from "styled-components";
-
-export const TableHeadContainer = styled.thead``;
+import { TableHeadContainer } from "./TableHead.styles";
 
 const TableHead = ({ children }) => (
   <TableHeadContainer>{children}</TableHeadContainer>

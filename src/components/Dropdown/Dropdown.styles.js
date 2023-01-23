@@ -1,28 +1,23 @@
-import styled from "styled-components";
+import { FadeWithTranslate } from "components/transitions/transitions";
 
 import { ReactComponent as SVGArrowDown } from "icons/arrow-down.svg";
 
+import styled from "styled-components";
+
 import { COLORS } from "styles/variables";
 
-export const Fade = styled.div`
-  transition: ${({ duration }) => duration}ms;
-  opacity: ${({ state }) => (state === "entered" ? 1 : 0)};
-  transform: translateY(${({ state }) => (state === "entered" ? "7px" : "0")});
-`;
-
-export const Container = styled.div`
-  position: relative;
-
-  display: inline-flex;
-
-  z-index: 100;
+export const CustomFadeWithTranslate = styled(FadeWithTranslate)`
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
 `;
 
 export const Header = styled.div`
   display: flex;
   align-items: center;
 
-  padding: 6px 8px;
+  padding: 4px 8px;
 
   border-radius: 4px;
   border: 1px solid ${COLORS.gray};
@@ -30,7 +25,7 @@ export const Header = styled.div`
 
   cursor: pointer;
 
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, opacity 0.25s;
 
   &:hover {
     border-color: ${COLORS.brescianBlue};
@@ -79,9 +74,9 @@ export const StyledSVGArrowDown = styled(SVGArrowDown)`
 
 export const MenuList = styled.ul`
   position: absolute;
-  top: calc(100% + 4px);
   right: 0;
 
+  min-width: 100%;
   padding: 4px 0;
   margin: 0;
 
@@ -105,8 +100,38 @@ export const MenuItem = styled.li`
 
   transition: color 0.25s;
 
+  color: ${COLORS.text};
+
   &:hover {
     background: ${COLORS.wizardWhite};
     color: ${COLORS.brescianBlue};
+  }
+`;
+
+export const Container = styled.div`
+  position: relative;
+
+  display: inline-flex;
+
+  z-index: 100;
+
+  ${Header} {
+    background: ${({ blueMode }) => blueMode && COLORS.brescianBlue};
+
+    &:hover {
+      opacity: 0.7;
+
+      ${StyledSVGArrowDown} {
+        fill: ${({ blueMode }) => blueMode && COLORS.white};
+      }
+    }
+  }
+
+  ${HeaderText} {
+    color: ${({ blueMode }) => blueMode && COLORS.white};
+  }
+
+  ${StyledSVGArrowDown} {
+    fill: ${({ blueMode }) => blueMode && COLORS.white};
   }
 `;

@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styled from "styled-components";
-
-export const TableBodyContainer = styled.tbody``;
+import { TableBodyContainer } from "./TableBody.styles";
 
 const TableBody = ({ children }) => (
   <TableBodyContainer>{children}</TableBodyContainer>
@@ -11,10 +9,6 @@ const TableBody = ({ children }) => (
 
 TableBody.propTypes = {
   children: PropTypes.node,
-};
-
-TableBody.defaultProps = {
-  children: null,
 };
 
 export default TableBody;

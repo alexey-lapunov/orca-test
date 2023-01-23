@@ -20,7 +20,11 @@ export const Link = styled.a.attrs(({ href }) => ({
 
   cursor: pointer;
 
+  word-break: break-all;
+
   svg {
+    min-width: 9px;
+
     fill: ${COLORS.gray};
 
     margin: 0 0 0 4px;
@@ -40,14 +44,14 @@ export const Link = styled.a.attrs(({ href }) => ({
 `;
 
 export const SVGRadarCustom = styled(SVGRadar)`
-  margin: 0 4px 0 0;
+  min-width: 12px;
+  margin: 3px 4px 0 0;
 
   fill: ${COLORS.gray};
 `;
 
 export const Container = styled.div`
   display: inline-flex;
-  align-items: center;
 
   ${Link} {
     color: ${({ whiteMode }) => (whiteMode ? COLORS.white : COLORS.text)};

@@ -4,7 +4,6 @@ import { Transition } from "react-transition-group";
 import PropTypes from "prop-types";
 
 import {
-  Fade,
   Header,
   MenuList,
   MenuItem,
@@ -12,14 +11,15 @@ import {
   HeaderText,
   HeaderIcon,
   StyledSVGArrowDown,
+  CustomFadeWithTranslate,
 } from "./Dropdown.styles";
 
 const appearDuration = 250;
 
-const Dropdown = ({ title, options, icon, handleItemClick }) => {
-  const [isOpen, setOpen] = useState(false);
+const Dropdown = ({ title, options = [], icon, blueMode, handleItemClick }) => {
+  const transitionRef = useRef(null);
   const containerNodeRef = useRef(null);
-  const nodeRef = useRef(null);
+  const [isOpen, setOpen] = useState(false);
 
   const onOpenDropdown = () => {
     setOpen(true);
@@ -51,21 +51,25 @@ const Dropdown = ({ title, options, icon, handleItemClick }) => {
   };
 
   return (
-    <Container ref={containerNodeRef}>
+    <Container ref={containerNodeRef} blueMode={blueMode}>
       <Header onClick={toggleOpenDropdown}>
         {icon && <HeaderIcon>{icon}</HeaderIcon>}
         <HeaderText>{title}</HeaderText>
         <StyledSVGArrowDown />
       </Header>
       <Transition
-        nodeRef={nodeRef}
+        nodeRef={transitionRef}
         in={isOpen}
         enter={false}
         unmountOnExit={true}
         timeout={appearDuration}
       >
         {(state) => (
-          <Fade ref={nodeRef} state={state} duration={appearDuration}>
+          <CustomFadeWithTranslate
+            ref={transitionRef}
+            state={state}
+            duration={appearDuration}
+          >
             <MenuList>
               {options.map((option) => (
                 <MenuItem
@@ -76,7 +80,7 @@ const Dropdown = ({ title, options, icon, handleItemClick }) => {
                 </MenuItem>
               ))}
             </MenuList>
-          </Fade>
+          </CustomFadeWithTranslate>
         )}
       </Transition>
     </Container>
@@ -87,11 +91,8 @@ Dropdown.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.element,
   options: PropTypes.array,
+  blueMode: PropTypes.bool,
   handleItemClick: PropTypes.func,
-};
-
-Dropdown.defaultProps = {
-  options: [],
 };
 
 export default Dropdown;

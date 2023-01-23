@@ -25,9 +25,4 @@ CopyBox.propTypes = {
   whiteMode: PropTypes.bool,
 };
 
-CopyBox.defaultProps = {
-  value: "",
-  whiteMode: false,
-};
-
 export default CopyBox;

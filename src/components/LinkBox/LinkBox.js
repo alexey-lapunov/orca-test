@@ -5,8 +5,8 @@ import { Container, SVGRadarCustom, Link } from "./LinkBox.styles";
 
 import { ReactComponent as SVGLink } from "icons/link.svg";
 
-const LinkBox = ({ href, whiteMode }) => (
-  <Container whiteMode={whiteMode}>
+const LinkBox = ({ href, whiteMode, className }) => (
+  <Container whiteMode={whiteMode} className={className}>
     <SVGRadarCustom />
     <Link href={href}>
       {href} <SVGLink />
@@ -15,10 +15,6 @@ const LinkBox = ({ href, whiteMode }) => (
 );
 
 LinkBox.propTypes = {
-  href: PropTypes.string,
-};
-
-LinkBox.defaultProps = {
   href: PropTypes.string,
 };
 

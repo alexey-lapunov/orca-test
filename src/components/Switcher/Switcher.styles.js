@@ -52,6 +52,20 @@ export const Container = styled.div`
 
   cursor: pointer;
 
+  &:hover {
+    ${ItemLeft} {
+      svg {
+        fill: ${({ active }) => (active ? COLORS.white : COLORS.brescianBlue)};
+      }
+    }
+
+    ${ItemRight} {
+      svg {
+        fill: ${({ active }) => (active ? COLORS.brescianBlue : COLORS.white)};
+      }
+    }
+  }
+
   ${ActiveBg} {
     transform: translateX(${({ active }) => (active ? "0" : "100%")});
   }

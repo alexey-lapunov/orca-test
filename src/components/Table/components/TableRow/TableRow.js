@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styled from "styled-components";
-
-export const TableRowContainer = styled.tr``;
+import { TableRowContainer } from "./TableRow.styles";
 
 const TableRow = ({
   children,
@@ -27,13 +25,6 @@ TableRow.propTypes = {
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
   children: PropTypes.node,
-};
-
-TableRow.defaultProps = {
-  onClick: null,
-  onMouseEnter: null,
-  onMouseLeave: null,
-  children: null,
 };
 
 export default TableRow;

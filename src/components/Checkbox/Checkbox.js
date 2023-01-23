@@ -19,8 +19,4 @@ Checkbox.propTypes = {
   text: PropTypes.string,
 };
 
-Checkbox.defaultProps = {
-  text: "",
-};
-
 export default Checkbox;

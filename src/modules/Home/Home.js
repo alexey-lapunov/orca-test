@@ -1,10 +1,13 @@
-import React from 'react'
-import Button from 'components/Button/Button'
+import React from "react";
+
+import InfoTable from "./InfoTable/InfoTable";
+
+import { Container } from "./Home.styles";
 
 const Home = () => (
-  <div>
-    <Button>Example button</Button>
-  </div>
-)
+  <Container>
+    <InfoTable />
+  </Container>
+);
 
-export default Home
+export default Home;

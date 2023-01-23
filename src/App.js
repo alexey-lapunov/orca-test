@@ -1,10 +1,17 @@
-import React from 'react'
-import Home from 'modules/Home/Home'
+import React from "react";
+import Home from "modules/Home/Home";
+import Modal from "react-modal";
+
+import GlobalStyle from "styles";
+import "index.css";
+
+Modal.setAppElement("#root");
 
 const App = () => (
-  <div>
-    Hello <Home />
-  </div>
-)
+  <>
+    <GlobalStyle />
+    <Home />
+  </>
+);
 
-export default App
+export default App;

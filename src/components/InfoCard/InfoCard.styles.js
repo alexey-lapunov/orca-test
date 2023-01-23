@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { COLORS } from "styles/variables";
 
 export const Container = styled.div`
+  height: 100%;
   padding: 24px 32px;
 
   background: ${COLORS.white};

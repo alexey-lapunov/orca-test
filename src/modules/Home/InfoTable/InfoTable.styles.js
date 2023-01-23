@@ -1,5 +1,7 @@
 import RiskLevel from "components/RiskLevel/RiskLevel";
 
+import CopyBox from "components/CopyBox/CopyBox";
+
 import styled from "styled-components";
 
 import { COLORS } from "styles/variables";
@@ -13,6 +15,10 @@ export const Header = styled.div`
   border-bottom: 1px solid ${COLORS.gray};
 
   margin: 0 0 32px 0;
+`;
+
+export const CustomCopyBox = styled(CopyBox)`
+  max-width: 100%;
 `;
 
 export const ControlPanel = styled.ul`

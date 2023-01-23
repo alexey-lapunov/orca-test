@@ -19,28 +19,29 @@ export const List = styled.ul`
   flex-wrap: wrap;
 
   list-style: none;
-  margin: -8px 0;
+  margin: -4px 0;
   padding: 0;
 `;
 
 export const ListItem = styled.li`
   width: 50%;
 
-  padding: 8px 0;
+  padding: 4px 0;
 `;
 
 export const Property = styled.div`
   display: flex;
-  align-items: center;
 `;
 
 export const PropertyLabel = styled(Text)`
-  width: 35%;
+  width: 40%;
+  padding: 3px 0 0 0;
+
   color: ${COLORS.prediction};
 `;
 
 export const PropertyValue = styled.div`
-  width: 65%;
+  width: 60%;
 `;
 
 export const CustomFillButton = styled(FillButton)`

@@ -13,11 +13,11 @@ import {
   ListCardItem,
   ModalButtons,
   ControlPanel,
+  CustomCopyBox,
   CustomRiskLevel,
   ModalButtonsItem,
   ControlPanelItem,
 } from "./InfoTable.styles";
-import CopyBox from "components/CopyBox/CopyBox";
 import LinkBox from "components/LinkBox/LinkBox";
 import { Fade } from "components/transitions/transitions";
 import Dropdown from "components/Dropdown/Dropdown";
@@ -171,7 +171,7 @@ const InfoTable = ({ children }) => {
                         },
                         {
                           label: "IP Address v4",
-                          value: <CopyBox value={ipV4} />,
+                          value: <CustomCopyBox value={ipV4} />,
                         },
                         {
                           label: "Name",
@@ -179,7 +179,7 @@ const InfoTable = ({ children }) => {
                         },
                         {
                           label: "IP Address v6",
-                          value: <CopyBox value={ipV6} />,
+                          value: <CustomCopyBox value={ipV6} />,
                         },
                         {
                           label: "File name",
@@ -191,7 +191,7 @@ const InfoTable = ({ children }) => {
                           ),
                         },
                         {
-                          label: "Scan source:",
+                          label: "Scan source",
                           value: <LinkBox href={link} />,
                         },
                       ]}

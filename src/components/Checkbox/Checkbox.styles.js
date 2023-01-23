@@ -14,10 +14,10 @@ export const Box = styled.div`
   border: 1px solid ${COLORS.gray};
   border-radius: 2px;
 
-  transition: border 0.25s;
+  transition: border 0.25s, background 0.25s;
 
   svg {
-    fill: ${COLORS.text};
+    fill: ${COLORS.white};
 
     transform: scale(0);
 
@@ -31,6 +31,8 @@ export const Input = styled.input.attrs(() => ({
   display: none;
 
   &:checked + ${Box} {
+    background: ${COLORS.brescianBlue};
+
     svg {
       transform: scale(1);
     }
@@ -55,7 +57,7 @@ export const Label = styled.label`
 
   &:hover {
     ${Box} {
-      border: 1px solid #0080ff;
+      border: 1px solid ${COLORS.brescianBlue};
     }
   }
 `;
